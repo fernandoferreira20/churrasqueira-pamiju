@@ -609,3 +609,16 @@ h1, h2, h3, h4, h5, h6 {
      }
 }
 
+/*** Animação de Rotação para Imagem Hero ***/
+.hero-image-rotate {
+    animation: rotate 10s linear infinite; /* Nome da animação, duração, tipo, repetição */
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Começa sem rotação */
+    }
+    to {
+        transform: rotate(360deg); /* Termina com uma volta completa */
+    }
+}
