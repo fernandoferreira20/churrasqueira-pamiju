@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="pt-MZ">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cardápio - Churrasqueira PAMIJU</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Cardápio Churrasqueira PAMIJU, Chimoio, Churrasco, Preços" name="keywords">
+    <meta content="Veja o nosso cardápio completo, incluindo carnes, acompanhamentos e bebidas." name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman:wght@400;700&family=Heebo:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">A carregar...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-xxl position-relative p-0">
+             <!-- *** A Navbar será .navbar-dark no topo *** -->
+            <nav class="navbar navbar-expand-lg navbar-dark px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class="fa fa-utensils me-3"></i>Churrasqueira PAMIJU</h1>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span> <!-- Ícone corrigido pelo CSS -->
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <a href="index.html" class="nav-item nav-link">Início</a>
+                        <a href="about.html" class="nav-item nav-link">Sobre</a>
+                        <a href="service.html" class="nav-item nav-link">Serviços</a>
+                        <a href="menu.html" class="nav-item nav-link active">Cardápio</a>
+                        <a href="booking.html" class="nav-item nav-link">Reservas</a>
+                        <a href="contact.html" class="nav-item nav-link">Localização</a>
+                        <a href="contact.html" class="nav-item nav-link">Contacto</a>
+                    </div>
+                    <a href="booking.html" class="btn btn-primary py-2 px-4">Reservar Mesa</a>
+                </div>
+            </nav>
+
+            <div class="container-xxl py-5 bg-dark hero-header mb-5">
+                <div class="container text-center my-5 pt-5 pb-4">
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Cardápio</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Cardápio</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+
+        <!-- Menu Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nosso Cardápio</h5>
+                    <h1 class="mb-5">O Sabor da Casa</h1>
+                </div>
+
+                <!-- Abas (Tabs) do Menu -->
+                <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
+                    <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
+                                <i class="fa fa-drumstick-bite fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">O Essencial</small>
+                                    <h6 class="mt-n1 mb-0">Carnes e Pratos</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
+                                <i class="fa fa-carrot fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Para acompanhar</small>
+                                    <h6 class="mt-n1 mb-0">Acompanhamentos</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
+                                <i class="fa fa-wine-glass-alt fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Para beber</small>
+                                    <h6 class="mt-n1 mb-0">Bebidas</h6>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-4">
+                                <i class="fa fa-ice-cream fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">O Doce</small>
+                                    <h6 class="mt-n1 mb-0">Sobremesas</h6>
+                                </div>
+                            </a>
+                        </li>
+                         <li class="nav-item">
+                            <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-5">
+                                <i class="fa fa-ellipsis-h fa-2x text-primary"></i>
+                                <div class="ps-3">
+                                    <small class="text-body">Extras</small>
+                                    <h6 class="mt-n1 mb-0">Outros</h6>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Conteúdo das Abas -->
+                    <div class="tab-content">
+
+                        <!-- Aba 1: Carnes e Pratos Principais -->
+                        <div id="tab-1" class="tab-pane fade show p-0 active">
+                            <div class="row g-4 menu-item">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Carne de Porco" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Carne de Porco (1kg)</span><span class="text-primary">700 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Carne de Vaca" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Carne de Vaca (1kg)</span><span class="text-primary">600 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Frango Inteiro" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Frango Inteiro (com batata ou xima)</span><span class="text-primary">650 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="1/2 Frango" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>1/2 Frango (com batata ou xima)</span><span class="text-primary">400 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="1/4 Frango" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>1/4 de Frango (com batata ou xima)</span><span class="text-primary">250 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Peixe Pende" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Peixe Pende (com xima ou batata)</span><span class="text-primary">450 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Dobrada de Vaca" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Dobrada de Vaca (com xima)</span><span class="text-primary">125 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Cabeça de Vaca" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Cabeça de Vaca (com pão)</span><span class="text-primary">100 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aba 2: Acompanhamentos -->
+                        <div id="tab-2" class="tab-pane fade show p-0">
+                             <div class="row g-4 menu-item">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Batata Frita" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Batata Frita (dose)</span><span class="text-primary">100 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Xima" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Xima (dose)</span><span class="text-primary">30 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Salada de Repolho" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Salada de Repolho (dose)</span><span class="text-primary">30 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Molho de Tomate" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Molho de Tomate (dose)</span><span class="text-primary">30 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Pão" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Pão (unidade)</span><span class="text-primary">10 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Aba 3: Bebidas -->
+                        <div id="tab-3" class="tab-pane fade show p-0">
+                            <div class="row g-4 menu-item"> <!-- Adicionada classe menu-item -->
+                                <!-- Sub-categoria Cervejas -->
+                                <div class="col-12 text-start pt-4">
+                                    <h4 class="text-primary mb-3" style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">Cervejas</h4>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Lite Grande" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Lite Grande</span><span class="text-primary">80 MZN</span></h5></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="2M Txoti" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>2M Txoti</span><span class="text-primary">60 MZN</span></h5></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="2M Lata" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>2M Lata</span><span class="text-primary">70 MZN</span></h5></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="2M Garrafa" style="width: 80px;">
+                                        <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>2M Garrafa</span><span class="text-primary">70 MZN</span></h5></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                         <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Manica Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Manica Lata</span><span class="text-primary">70 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Manica Garrafa" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Manica Garrafa</span><span class="text-primary">70 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Preta Txoti" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Preta Txoti</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Preta Garrafa" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Preta Garrafa</span><span class="text-primary">70 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Impala de Milho Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Impala de Milho Lata</span><span class="text-primary">50 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Impala de Mandioca" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Impala de Mandioca</span><span class="text-primary">50 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Impala de Milho" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Impala de Milho</span><span class="text-primary">50 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Tailar Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Tailar Lata</span><span class="text-primary">65 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Heineken Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Heineken Lata</span><span class="text-primary">90 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Heineken Garrafa" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Heineken Garrafa</span><span class="text-primary">90 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Tailar Garrafa" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Tailar Garrafa</span><span class="text-primary">65 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Impalinha" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Impalinha</span><span class="text-primary">40 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+
+                                <!-- Sub-categoria Bebidas Brancas e Licores -->
+                                <div class="col-12 text-start pt-4">
+                                    <h4 class="text-primary mb-3" style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">Bebidas Brancas e Licores</h4>
+                                </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Casal Garcia" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Casal Garcia</span><span class="text-primary">800 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Cellar Cask" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Cellar Cask</span><span class="text-primary">800 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Jameson (dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Jameson (dose)</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Amarula (dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Amarula (dose)</span><span class="text-primary">75 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Gordon Gin (dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Gordon Gin (dose)</span><span class="text-primary">120 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="1920 (dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>1920 (dose)</span><span class="text-primary">30 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Hunters Gold" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Hunters Gold</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Savana" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Savana</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Brutal" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Brutal</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Brizzer" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Brizzer</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+
+                                <!-- Sub-categoria Refrigerantes e Sumos -->
+                                <div class="col-12 text-start pt-4">
+                                     <h4 class="text-primary mb-3" style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">Refrigerantes e Sumos</h4>
+                                </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Água Tónica" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Água Tónica</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Schweppes" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Schweppes</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Refresco Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Refresco Lata</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Cappy Lata" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Cappy Lata</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Refresco Petty" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Refresco Petty</span><span class="text-primary">30 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Minut Maid Botija" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Minut Maid Botija</span><span class="text-primary">40 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Refresco Garrafa" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Refresco Garrafa</span><span class="text-primary">25 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Refresco 2L" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Refresco 2L</span><span class="text-primary">110 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Refresco 1L" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Refresco 1L</span><span class="text-primary">65 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Sumo 200ml" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Sumo 200ml</span><span class="text-primary">50 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Sumo 500ml" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Sumo 500ml</span><span class="text-primary">70 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Sumo 1L" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Sumo 1L</span><span class="text-primary">150 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Red Bull" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Red Bull</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Dragon" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Dragon</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="May Fair" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>May Fair</span><span class="text-primary">110 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Água Grande" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Água Grande</span><span class="text-primary">60 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Água Pequena" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Água Pequena</span><span class="text-primary">30 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+
+                                <!-- Sub-categoria Vinhos -->
+                                <div class="col-12 text-start pt-4">
+                                     <h4 class="text-primary mb-3" style="font-family: 'Times New Roman', Times, serif; font-weight: bold;">Vinhos</h4>
+                                </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Vinho Tinto (Pe Tinto - dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Vinho Tinto (Pe Tinto - dose)</span><span class="text-primary">120 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="d-flex align-items-center">
+                                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-placeholder.png" alt="Sac Domingos (dose)" style="width: 80px;">
+                                         <div class="w-100 d-flex flex-column text-start ps-4"><h5 class="d-flex justify-content-between border-bottom pb-2"><span>Sac Domingos (dose)</span><span class="text-primary">100 MZN</span></h5></div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+
+                        <!-- Aba 4: Sobremesas -->
+                        <div id="tab-4" class="tab-pane fade show p-0">
+                            <div class="row g-4">
+                                <div class="col-12 text-center">
+                                    <h3 style="margin-top: 40px; font-family: 'Times New Roman', Times, serif;">Novas sobremesas em breve!</h3>
+                                    <p>Estamos a preparar doces deliciosos para si.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Aba 5: Outros -->
+                        <div id="tab-5" class="tab-pane fade show p-0">
+                             <div class="row g-4 menu-item">
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                         <i class="fa fa-coffee fa-2x text-primary ps-4 pe-3"></i> <!-- Ícone em vez de imagem -->
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Café</span><span class="text-primary">Cortesia</span></h5>
+                                            <!-- <small class="fst-italic">(Provavelmente cortesia)</small> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                         <i class="fa fa-leaf fa-2x text-primary ps-4 pe-3"></i> <!-- Ícone em vez de imagem -->
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Chá</span><span class="text-primary">? MZN</span></h5>
+                                             <small class="fst-italic">Preço a confirmar</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                         <i class="fa fa-cube fa-2x text-primary ps-4 pe-3"></i> <!-- Ícone em vez de imagem -->
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Açúcar</span><span class="text-primary">? MZN</span></h5>
+                                            <small class="fst-italic">Preço a confirmar</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fa fa-box fa-2x text-primary ps-4 pe-3"></i> <!-- Ícone em vez de imagem -->
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>TakeAway (taxa de embalagem)</span><span class="text-primary">10 MZN</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                 <div class="col-lg-6">
+                                    <div class="d-flex align-items-center">
+                                         <i class="fa fa-shield-alt fa-2x text-primary ps-4 pe-3"></i> <!-- Ícone em vez de imagem -->
+                                        <div class="w-100 d-flex flex-column text-start ps-4">
+                                            <h5 class="d-flex justify-content-between border-bottom pb-2"><span>Preservativo</span><span class="text-primary">? MZN</span></h5>
+                                            <small class="fst-italic">Preço a confirmar</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Menu End -->
+
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">A Churrasqueira</h4>
+                        <p>O verdadeiro sabor do churrasco moçambicano, feito com paixão e tradição em Chimoio.</p>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contacto</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>VFQF+744, Rua Dos Trabalhadores, Chimoio</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+258 86 133 7779</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>contato@churrasqueirapamiju.co.mz</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-instagram"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Horário</h4>
+                        <h5 class="text-light fw-normal">Segunda - Domingo</h5>
+                        <p>07:00 - 22:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">Churrasqueira PAMIJU</a>, Todos os Direitos Reservados.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
