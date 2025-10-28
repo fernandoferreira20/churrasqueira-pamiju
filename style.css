@@ -1,463 +1,524 @@
-/* === ESTILO CHURRASQUEIRA PAMIJU === */
-
-/* --- Fontes e Cores Base --- */
+/********** Template CSS - Adaptado para Churrasqueira PAMIJU **********/
 :root {
-    --primary: #B22222; /* Vermelho Churrasco (para botões e destaques) */
-    --secondary: #FF7F50; /* Laranja Queimado (para hovers e detalhes) */
-    --light: #FFF5E1; /* Bege Claro (Fundo principal do conteúdo) */
-    --dark: #5A3E36; /* Marrom Amadeirado (Navbar/Footer) */
-    --dark-text: #2B2B2B; /* Preto Suave (Texto principal) */
-    --light-text: #FFFFFF; /* Texto para fundos escuros */
+    --primary: #FEA116;       /* Laranja/Amarelo Dourado (logo) */
+    --secondary: #D32A1E;     /* Vermelho Forte (logo) */
+    --light: #FFF8E1;         /* Bege muito claro (fundo principal) */
+    --dark: #4A2F20;         /* Marrom Escuro (madeira/contornos/footer) */
+    --green-accent: #7EC242; /* Verde Lima (logo) */
+    --blue-accent: #00A4E4;  /* Azul Claro (logo) */
+    --text-light: #FFFFFF;    /* Branco */
+    --text-dark: #333333;     /* Cinza Escuro */
 }
 
+/*** Fontes ***/
 body {
-    font-family: 'Times New Roman', Times, serif; /* Fonte principal clássica */
+    font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
-    color: var(--dark-text);
-    background-color: var(--light); /* Fundo bege claro */
+    background-color: var(--light);
+    color: var(--text-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Heebo', sans-serif; /* Fonte moderna para títulos (como no template) */
+    font-family: 'Heebo', sans-serif;
     font-weight: 700;
+    color: var(--dark); /* Títulos em marrom escuro */
 }
 
-h1.display-3 {
-     font-family: 'Times New Roman', Times, serif; /* Título do Hero clássico */
-     font-weight: 700;
+.hero-header h1.display-3 {
+     font-family: 'Times New Roman', Times, serif;
+     font-weight: bold;
+     color: var(--text-light); /* Título Hero em branco */
 }
 
-/* --- Botões --- */
+
+/*** Reset Básico ***/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*** Botões ***/
+.btn {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 500;
+    transition: .5s;
+    border-radius: 2px; /* Cantos ligeiramente arredondados */
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: var(--text-light); /* Texto branco nos botões principais por padrão */
+}
+
 .btn-primary {
-    background-color: var(--primary);
+    background-color: var(--primary); /* Botão principal Laranja */
     border-color: var(--primary);
-    color: var(--light-text);
-    transition: 0.3s;
+    color: var(--dark); /* Texto escuro no botão laranja */
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary); /* Hover laranja */
+    background-color: var(--secondary); /* Hover Vermelho */
     border-color: var(--secondary);
-    color: var(--dark-text);
+    color: var(--text-light); /* Texto branco no hover vermelho */
 }
 
-/* --- Navbar --- */
-/* A textura de madeira é aplicada aqui */
+.btn-square { width: 38px; height: 38px; }
+.btn-sm-square { width: 32px; height: 32px; }
+.btn-lg-square { width: 48px; height: 48px; }
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50%; /* Botões de ícone redondos */
+}
+
+
+/*** Navbar ***/
+.navbar {
+    padding: 15px 0; /* Diminuído ligeiramente o padding */
+    transition: .5s;
+}
+
+/* Cor e Estilo da Navbar */
 .navbar.navbar-dark {
-    background: var(--dark) url('../img/wood_texture.png'); /* Caminho para a textura */
-    border-bottom: 4px solid var(--primary); /* Linha vermelha de destaque */
+    /* Usar cor sólida escura em vez de textura para melhor consistência visual */
+    background: var(--dark); /* Fundo marrom escuro */
+    border-bottom: 3px solid var(--primary); /* Linha Laranja */
 }
-
-/* Corrigido: Navbar quando NÃO está no topo */
-.navbar:not(.navbar-dark) {
-    background: var(--light); /* Fundo claro quando não está no topo */
-}
-
 
 .navbar .navbar-brand h1 {
-    color: var(--light-text); /* Nome do restaurante em branco na navbar escura*/
-    font-family: 'Heebo', sans-serif; /* Mantemos a fonte do template para a logo */
-    font-weight: 700;
+    color: var(--primary); /* Nome PAMIJU em Laranja */
+    font-family: 'Heebo', sans-serif; /* Mantém a fonte original para o logo */
+    font-weight: bold;
+    font-size: 1.8rem; /* Ajustar tamanho se necessário */
 }
-/* Corrigido: Cor do Logo na navbar clara */
-.navbar:not(.navbar-dark) .navbar-brand h1 {
-     color: var(--dark-text); /* Cor escura na navbar clara */
+.navbar .navbar-brand h1 i {
+     color: var(--secondary); /* Ícone talheres em Vermelho */
 }
 
 
 .navbar .navbar-nav .nav-link {
-    color: var(--light-text); /* Links em branco na navbar escura*/
+    margin-right: 25px; /* Diminuído espaço entre links */
+    padding: 20px 0; /* Ajustado padding vertical */
+    color: var(--text-light); /* Links em branco */
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.1rem;
     font-weight: bold;
-    transition: 0.3s;
-    padding: 25px 15px; /* Ajuste padding */
-}
-/* Corrigido: Cor dos links na navbar clara */
-.navbar:not(.navbar-dark) .navbar-nav .nav-link {
-     color: var(--dark-text); /* Cor escura na navbar clara */
+    outline: none;
+    transition: color 0.3s;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--secondary); /* Laranja no hover/ativo */
+    color: var(--primary); /* Cor Laranja no hover/ativo */
 }
 
-/* Corrigido: Cor hover/ativo na navbar clara */
-.navbar:not(.navbar-dark) .navbar-nav .nav-link:hover,
-.navbar:not(.navbar-dark) .navbar-nav .nav-link.active {
-     color: var(--primary); /* Vermelho no hover/ativo na navbar clara */
+/* --- ÍCONE NAVBAR TOGGLER (TRÊS TRAÇOS) --- */
+.navbar-toggler {
+    border-color: rgba(254, 161, 22, 0.5); /* Borda Laranja semi-transparente */
+    padding: .25rem .5rem; /* Padding menor */
 }
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 161, 22, 0.5); /* Sombra de foco Laranja */
+}
+.navbar-toggler-icon {
+     /* Ícone das três barras em Laranja (cor --primary) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(254, 161, 22, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.2em; /* Tamanho do ícone */
+    height: 1.2em;
+}
+/* --- FIM ÍCONE --- */
+
+/* --- MENU MOBILE (QUANDO ABERTO) --- */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        /* Fundo sólido marrom escuro para garantir visibilidade */
+        background-color: var(--dark) !important;
+        border-radius: 0 0 5px 5px;
+        margin-top: 3px; /* Espaço abaixo da linha laranja da navbar */
+        padding: 10px 0; /* Padding vertical */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para destacar */
+        border: 1px solid rgba(254, 161, 22, 0.2); /* Borda laranja sutil */
+        border-top: none; /* Sem borda no topo */
+    }
+    /* Estilo dos links dentro do menu mobile aberto */
+    .navbar-collapse .navbar-nav .nav-link {
+        color: var(--text-light) !important; /* Texto branco */
+        padding: 10px 20px; /* Padding interno */
+        margin: 2px 10px; /* Margem entre links */
+        border-radius: 3px;
+        text-align: left; /* Alinhar à esquerda */
+    }
+    .navbar-collapse .navbar-nav .nav-link:hover,
+    .navbar-collapse .navbar-nav .nav-link.active {
+        background-color: var(--primary); /* Fundo laranja no hover/ativo */
+        color: var(--dark) !important; /* Texto marrom escuro */
+    }
+     .navbar .navbar-nav {
+         border-top: none; /* Remover linha que poderia aparecer */
+     }
+     /* Ajustar botão "Reservar Mesa" no mobile */
+     .navbar-collapse .btn-primary {
+         margin: 15px 20px 5px 20px; /* Margem ajustada */
+         width: calc(100% - 40px); /* Ocupar largura com margens */
+         text-align: center;
+     }
+}
+/* --- FIM MENU MOBILE --- */
 
 
-/* Estilos para Navbar quando faz scroll */
-.navbar.sticky-top {
+.navbar.sticky-top { /* Estilo quando faz scroll */
     padding: 10px 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: var(--dark) !important; /* Mantém fundo marrom */
 }
 
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar .navbar-nav {
-        border-top: 1px solid rgba(255, 255, 255, .1);
-    }
-     /* Corrigido: Cor da borda na navbar clara */
-    .navbar:not(.navbar-dark) .navbar-nav {
-         border-top: 1px solid rgba(0, 0, 0, .1);
-    }
-
-}
 
 @media (min-width: 992px) {
-    .navbar.navbar-dark {
+    .navbar.navbar-dark { /* Estilo inicial em telas grandes */
         position: absolute;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 999;
-        background: transparent !important; /* Navbar transparente no topo */
-        border-bottom: none; /* Sem borda no topo */
+        background: transparent !important; /* Começa transparente */
+        border-bottom: none;
     }
 
-    .navbar.navbar-dark.sticky-top {
-        position: fixed; /* Fixa no topo ao fazer scroll */
-        background: var(--dark) url('../img/wood_texture.png') center/cover !important; /* Volta a ter fundo de madeira */
-         border-bottom: 3px solid var(--primary); /* Volta a ter a borda */
+    .navbar.navbar-dark.sticky-top { /* Estilo em telas grandes após scroll */
+        position: fixed;
+        background: var(--dark) !important; /* Fica marrom */
+         border-bottom: 3px solid var(--primary); /* Adiciona linha laranja */
+    }
+     /* Esconder .navbar-collapse em telas grandes para evitar fundo extra indesejado */
+    .navbar-collapse.collapse.show:not(.collapsing) {
+        background-color: transparent !important;
+        box-shadow: none;
+        border: none;
     }
 }
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(43, 43, 43, 0.8), rgba(43, 43, 43, 0.8)),
-                url('../img/hero-bg.jpg') center center/cover no-repeat;
-    /* *** DEVES TROCAR 'hero-bg.jpg' por uma foto tua de fundo *** */
+    background: linear-gradient(rgba(74, 47, 32, .85), rgba(74, 47, 32, .85)), /* Overlay Marrom Escuro mais forte */
+                url('../img/hero-bg.jpg') center center/cover no-repeat; /* *** TROCAR IMAGEM DE FUNDO *** */
     padding: 10rem 0;
 }
-.hero-header h1 {
-    color: var(--light-text);
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+.hero-header p.text-white {
+    color: rgba(255, 255, 255, 0.9) !important; /* Texto ligeiramente menos branco */
+    font-size: 1.1rem;
 }
-.hero-header p {
-    color: var(--light-text);
-}
-.hero-header .btn-primary {
-    background-color: var(--secondary); /* Botão do Hero em Laranja */
-    border-color: var(--secondary);
-    color: var(--dark-text);
-    font-weight: bold;
+.hero-header .btn-primary { /* Botão específico do Hero */
+    background-color: var(--primary); /* Laranja */
+    border-color: var(--primary);
+    color: var(--dark); /* Texto marrom escuro */
+    font-weight: bold; /* Texto a negrito */
+    padding: .8rem 1.8rem; /* Padding ligeiramente maior */
+    font-size: 1rem;
 }
 .hero-header .btn-primary:hover {
-    background-color: var(--primary); /* Hover em Vermelho */
-    border-color: var(--primary);
-    color: var(--light-text);
+    background-color: var(--secondary); /* Vermelho */
+    border-color: var(--secondary);
+    color: var(--text-light); /* Texto branco */
 }
 
 
 /*** Section Title ***/
 .section-title {
     position: relative;
-    display: inline-block;
+    display: inline-block; /* Ajustado para centralizar com text-center */
     font-family: 'Heebo', sans-serif;
     font-weight: 600;
-    color: var(--primary);
+    color: var(--secondary); /* Títulos secundários em Vermelho */
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+    font-size: 1rem; /* Tamanho ajustado */
+    text-transform: uppercase; /* Maiúsculas */
+    letter-spacing: 1px;
 }
+
+/* Linhas decorativas abaixo do título */
 .section-title::before {
     position: absolute;
     content: "";
-    width: 45px;
-    height: 2px;
-    top: 50%;
-    left: -55px;
-    margin-top: -1px;
-    background: var(--primary);
+    width: 60px;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--dark); /* Linha Marrom escura */
+    border-radius: 2px;
 }
+
 .section-title::after {
     position: absolute;
     content: "";
-    width: 45px;
-    height: 2px;
-    top: 50%;
-    right: -55px;
-    margin-top: -1px;
-    background: var(--primary);
+    width: 30px;
+    height: 3px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary); /* Linha Laranja por cima */
+    border-radius: 2px;
 }
-.section-title.text-start::before,
-.section-title.text-end::after {
-    display: none;
+/* Remover linhas se o título estiver alinhado à esquerda/direita */
+.section-title.text-start::before, .section-title.text-start::after {
+    left: 0;
+    transform: translateX(0);
+}
+.section-title.text-end::before, .section-title.text-end::after {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
 }
 
 
 /*** Service ***/
 .service-item {
-    background-color: var(--light-text); /* Fundo branco nos cards */
-    border: 1px solid #E0E0E0;
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+    background-color: var(--text-light);
+    border: 1px solid rgba(74, 47, 32, 0.1); /* Borda marrom clara */
+    box-shadow: 0 0 30px rgba(74, 47, 32, .08); /* Sombra marrom suave */
     transition: .5s;
-    height: 100%; /* Garante altura igual */
+    border-radius: 4px;
+    height: 100%;
+    padding: 30px; /* Padding interno */
 }
+
 .service-item:hover {
-    background: var(--primary); /* Fundo vermelho no hover */
+    background: var(--primary); /* Fundo Laranja no hover */
+    border-color: var(--primary);
 }
+
 .service-item * {
     transition: .5s;
 }
+
 .service-item:hover * {
-    color: var(--light-text) !important; /* Todo o texto fica branco no hover */
+    color: var(--dark) !important; /* Texto Marrom Escuro no hover */
+}
+.service-item i {
+    font-size: 3rem; /* Ícone maior */
+    color: var(--primary); /* Ícone Laranja por padrão */
+    margin-bottom: 20px; /* Espaço abaixo do ícone */
 }
 .service-item:hover i {
-     color: var(--secondary) !important; /* Ícone fica laranja no hover */
+     color: var(--dark) !important; /* Ícone Marrom Escuro no hover */
+}
+.service-item h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 
 /*** Food Menu ***/
-.nav-pills .nav-item .nav-link {
+.nav-pills .nav-link {
     background-color: transparent;
-    border-radius: 0;
-    color: var(--dark-text); /* Texto das abas do menu */
+    border-radius: 4px;
+    margin: 0 5px 10px 5px; /* Margem inferior adicionada */
+    color: var(--dark);
+    font-weight: 500;
+    border: 1px solid rgba(74, 47, 32, 0.2); /* Borda marrom clara */
+    transition: .3s;
+    padding: 10px 15px; /* Padding interno */
 }
-.nav-pills .nav-item .nav-link.active {
-    color: var(--primary); /* Cor vermelha na aba ativa */
-    border-bottom: 2px solid var(--primary);
+.nav-pills .nav-link i { /* Ícones dentro das tabs */
+     margin-right: 8px;
+     color: var(--primary);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+    background-color: var(--primary); /* Fundo Laranja */
+    color: var(--dark); /* Texto Marrom Escuro */
+    border-color: var(--primary);
+}
+.nav-pills .nav-link.active i,
+.nav-pills .nav-link:hover i {
+     color: var(--dark); /* Ícone Marrom Escuro */
 }
 .tab-content .border-bottom {
-    border-color: #dee2e6 !important; /* Linha divisória dos itens do menu */
+    border-color: rgba(74, 47, 32, 0.2) !important; /* Linha marrom clara */
+}
+.tab-content h5 {
+     font-size: 1.1rem; /* Tamanho do nome do prato */
 }
 .tab-content h5 span:last-child {
-    color: var(--primary); /* Preço em vermelho */
-}
-/* Ajuste para imagem e texto no menu */
-.menu-item .d-flex {
-    align-items: center; /* Alinha imagem e texto verticalmente */
+    color: var(--secondary); /* Preço em Vermelho */
+    font-weight: bold;
+    white-space: nowrap; /* Evitar que o preço quebre linha */
+    padding-left: 15px; /* Espaço antes do preço */
 }
 .menu-item img {
+    border-radius: 4px; /* Cantos arredondados nas imagens do menu */
     width: 80px;
     height: 80px;
-    object-fit: cover; /* Garante que a imagem preenche o espaço sem distorcer */
+    object-fit: cover; /* Garante que a imagem cobre o espaço */
+    border: 2px solid var(--light); /* Borda bege clara */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.menu-item .d-flex { /* Espaçamento entre itens */
+     margin-bottom: 15px;
 }
 
 
 /*** Reservation ***/
-/* Mantém o estilo original do template */
-.video {
-    position: relative;
-    height: 100%;
-    min-height: 400px;
-    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/bg-hero.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.bg-dark {
+    background-color: var(--dark) !important;
 }
-.video .btn-play {
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    box-sizing: content-box;
-    display: block;
-    width: 32px;
-    height: 44px;
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    padding: 18px 20px 18px 28px;
-    background: var(--primary); /* Botão play vermelho */
+.form-control, .form-select { /* Estilo dos campos do formulário */
+     border: 1px solid #ced4da;
+     border-radius: 2px;
 }
-.video .btn-play:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 100px;
-    height: 100px;
-    background: var(--primary);
-    border-radius: 50%;
-    animation: pulse-border 1500ms ease-out infinite;
-}
-.video .btn-play:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 100px;
-    height: 100px;
-    background: var(--primary);
-    border-radius: 50%;
-    transition: all 200ms;
-}
-.video .btn-play img {
-    position: relative;
-    z-index: 3;
-    max-width: 100%;
-    width: auto;
-    height: auto;
-}
-.video .btn-play span {
-    display: block;
-    position: relative;
-    z-index: 3;
-    width: 0;
-    height: 0;
-    border-left: 32px solid var(--light-text); /* Seta play branca */
-    border-top: 22px solid transparent;
-    border-bottom: 22px solid transparent;
-}
-@keyframes pulse-border {
-    0% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-        opacity: 0;
-    }
-}
-#videoModal .modal-dialog {
-    position: relative;
-    max-width: 800px;
-    margin: 60px auto 0 auto;
-}
-#videoModal .modal-body {
-    position: relative;
-    padding: 0px;
-}
-#videoModal .close {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    right: 0px;
-    top: -30px;
-    z-index: 999;
-    font-size: 30px;
-    font-weight: normal;
-    color: #FFFFFF;
-    background: #000000;
-    opacity: 1;
-}
-.bg-dark.d-flex {
-    background-color: var(--dark) !important; /* Garante fundo marrom no form de reserva */
+.form-control:focus, .form-select:focus {
+     border-color: var(--primary);
+     box-shadow: 0 0 0 0.2rem rgba(254, 161, 22, 0.25);
 }
 
 
 /*** Team ***/
 .team-item {
-    box-shadow: 0 0 45px rgba(0, 0, 0, .08);
-    height: calc(100% - 38px);
+    box-shadow: 0 0 30px rgba(74, 47, 32, .08);
     transition: .5s;
-}
-.team-item img {
-    transition: .5s;
-}
-.team-item:hover img {
-    transform: scale(1.1);
+    border-radius: 4px;
+    overflow: hidden; /* Garante que a borda arredondada funcione */
 }
 .team-item:hover {
-    height: 100%;
+     box-shadow: 0 0 45px rgba(74, 47, 32, .15);
 }
-.team-item .btn {
-    border-radius: 38px 38px 0 0;
+.team-item .btn-square { /* Botões sociais da equipa */
+     background: var(--text-light);
+     color: var(--primary);
+     border: 1px solid var(--primary);
+}
+.team-item .btn-square:hover {
+     background: var(--primary);
+     color: var(--dark);
 }
 
 
 /*** Testimonial ***/
-.testimonial-carousel .owl-item .testimonial-item,
-.testimonial-carousel .owl-item.center .testimonial-item * {
-    transition: .5s;
+.testimonial-item {
+     border: 1px solid rgba(74, 47, 32, 0.1);
+     border-radius: 4px;
 }
-.testimonial-carousel .owl-item.center .testimonial-item {
-    background: var(--primary) !important; /* Fundo vermelho no item central */
-    border-color: var(--primary);
-}
-.testimonial-carousel .owl-item.center .testimonial-item * {
-    color: var(--light-text) !important; /* Texto branco no item central */
+.testimonial-carousel .owl-item img {
+    width: 60px; /* Foto do cliente um pouco maior */
+    height: 60px;
 }
 .testimonial-carousel .owl-dots {
-    margin-top: 24px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    margin-top: 25px;
 }
-.testimonial-carousel .owl-dot {
-    position: relative;
-    display: inline-block;
-    margin: 0 5px;
-    width: 15px;
-    height: 15px;
-    border: 1px solid #CCCCCC;
-    border-radius: 15px;
+.testimonial-carousel .owl-dots .owl-dot {
+    background: rgba(254, 161, 22, 0.4); /* Bolinhas Laranja transparente */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 4px;
     transition: .5s;
 }
-.testimonial-carousel .owl-dot.active {
-    background: var(--primary); /* Ponto ativo vermelho */
-    border-color: var(--primary);
+.testimonial-carousel .owl-dots .owl-dot.active {
+    background: var(--primary); /* Bolinha ativa Laranja sólido */
+    width: 15px; /* Ligeiramente maior quando ativa */
+    height: 15px;
 }
 
 
 /*** Footer ***/
 .footer {
-    background: var(--dark) url('../img/wood_texture.png') center/cover; /* Textura de madeira no Footer */
-    color: rgba(255, 255, 255, 0.7); /* Texto do footer ligeiramente transparente */
-    border-top: 4px solid var(--primary); /* Borda vermelha no topo do footer */
+    background: var(--dark); /* Fundo Marrom Escuro */
+    color: rgba(255, 255, 255, 0.8); /* Texto um pouco mais visível */
+    padding-top: 4rem;
+    padding-bottom: 1rem;
+    border-top: 5px solid var(--primary); /* Borda Laranja grossa no topo */
 }
-.footer .btn.btn-social { /* Estilo dos botões sociais */
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
+
+/* Títulos no Footer */
+.footer .section-title {
+    font-size: 1.1rem; /* Tamanho ajustado */
+    color: var(--primary); /* Títulos (Contacto, Horário) em Laranja */
+    margin-bottom: 1.5rem;
+    padding-bottom: 0; /* Remover linhas decorativas no footer */
+    text-transform: uppercase; /* Maiúsculas */
+}
+.footer .section-title::before,
+.footer .section-title::after {
+    display: none;
+}
+.footer h4.text-primary {
+     color: var(--primary) !important;
+}
+
+
+.footer .btn.btn-social { /* Botões sociais */
+    margin-right: 8px; /* Mais espaço */
+    width: 40px; /* Maiores */
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light-text);
-    border: 1px solid var(--light-text);
-    border-radius: 35px;
+    color: var(--text-light); /* Ícone branco */
+    border: 1px solid rgba(254, 161, 22, 0.5); /* Borda laranja semi-transparente */
+    border-radius: 50%;
     transition: .3s;
 }
+
 .footer .btn.btn-social:hover {
-    color: var(--primary); /* Ícone vermelho no hover */
-    border-color: var(--secondary); /* Borda laranja no hover */
+    color: var(--dark); /* Ícone marrom */
+    background: var(--primary); /* Fundo laranja */
+    border-color: var(--primary);
 }
-.footer .btn.btn-link { /* Links no Footer */
+
+.footer .btn.btn-link { /* Links rápidos (se houver) */
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     padding: 0;
     text-align: left;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 15px;
+    color: rgba(255, 255, 255, 0.8); /* Texto mais visível */
+    font-size: 1rem; /* Tamanho maior */
     font-weight: normal;
     text-transform: capitalize;
     transition: .3s;
 }
+
 .footer .btn.btn-link::before {
     position: relative;
-    content: "\f105";
+    content: "\f105"; /* Ícone de seta */
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
+    color: var(--primary); /* Seta Laranja */
 }
+
 .footer .btn.btn-link:hover {
     letter-spacing: 1px;
     box-shadow: none;
-    color: var(--secondary); /* Cor laranja no hover */
+    color: var(--primary); /* Cor Laranja no hover */
 }
-.footer .copyright {
-    padding: 25px 0;
-    font-size: 15px;
-    border-top: 1px solid rgba(255, 255, 255, .1);
+.footer p i { /* Ícones de contacto (mapa, telefone, email) */
+    color: var(--primary); /* Laranja */
+    margin-right: 10px; /* Espaço à direita */
 }
+
+.footer .copyright { /* Linha de Copyright */
+    margin-top: 2rem;
+    padding-top: 1.5rem; /* Mais espaço acima */
+    font-size: 0.9rem; /* Texto ligeiramente menor */
+    border-top: 1px solid rgba(255, 255, 255, .15); /* Linha divisória mais visível */
+    text-align: center;
+}
+
 .footer .copyright a {
-    color: var(--light-text);
+    color: var(--primary); /* Link em Laranja */
 }
+
 .footer .copyright a:hover {
-     color: var(--secondary); /* Cor laranja no hover */
+     color: var(--secondary); /* Hover Vermelho */
 }
 
 
@@ -468,6 +529,7 @@ h1.display-3 {
     transition: opacity .5s ease-out, visibility 0s linear .5s;
     z-index: 99999;
 }
+
 #spinner.show {
     transition: opacity .5s ease-out, visibility 0s linear 0s;
     visibility: visible;
@@ -478,66 +540,49 @@ h1.display-3 {
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 30px;
+    bottom: 30px;
     z-index: 99;
+    background: var(--primary); /* Fundo Laranja */
+    border-color: var(--primary);
+}
+.back-to-top:hover {
+     background: var(--secondary); /* Hover Vermelho */
+     border-color: var(--secondary);
 }
 
 
-/*** Miscellaneous ***/
-@media (min-width: 992px) {
-    .fw-medium {
-        font-weight: 600 !important;
-    }
-}
-
-/* --- Ajustes Responsivos --- */
+/* --- Ajustes Responsivos Adicionais --- */
 @media (max-width: 768px) {
     .hero-header {
-        padding: 5rem 0; /* Menos padding no mobile */
+        padding: 6rem 0; /* Menos padding no mobile */
     }
     .hero-header h1 {
-        font-size: 2.5rem; /* Título menor no mobile */
+        font-size: 2.2rem; /* Título menor no mobile */
     }
     .navbar .navbar-brand h1 {
-        font-size: 1.5rem; /* Logo menor no mobile */
+        font-size: 1.6rem; /* Logo menor no mobile */
     }
     .footer {
-         text-align: center; /* Centraliza texto do footer no mobile */
+         padding-top: 2rem; /* Menos padding no topo */
     }
-     .footer .btn.btn-link {
-        text-align: center; /* Centraliza links do footer */
+    .footer .row > div { /* Espaçamento entre colunas do footer */
+        margin-bottom: 2rem;
+    }
+     .footer .col-lg-4, .footer .col-md-6 { /* Centralizar colunas do footer no mobile */
+          text-align: center !important;
+     }
+      .footer .btn.btn-link {
+        text-align: center;
     }
      .footer .btn.btn-link::before {
         display: none; /* Esconde a seta nos links do footer */
     }
-}
-
-/* --- CORREÇÃO NAVBAR TOGGLER --- */
-/*** Correção Cor do Ícone Navbar Toggler (Três Barras) ***/
-.navbar-toggler-icon {
-    /* Usa um SVG inline para definir a cor das barras (vermelho) */
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(178, 34, 34, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Opcional: Mudar cor da borda do botão toggler */
-.navbar-toggler {
-    border-color: rgba(178, 34, 34, 0.5); /* Borda vermelha semi-transparente */
-    margin-right: 1rem; /* Adiciona margem para não colar na direita */
-}
-
-/* Remove a borda padrão que aparece ao focar */
-.navbar-toggler:focus {
-    box-shadow: none; /* Remove o box-shadow padrão */
-    outline: 2px solid rgba(178, 34, 34, 0.25); /* Adiciona um outline suave */
-}
-
-/* Corrigido: Para navbar escura no topo (antes do scroll) */
-.navbar.navbar-dark .navbar-toggler-icon {
-     /* Usa um SVG inline para definir a cor das barras (branco) */
-     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-.navbar.navbar-dark .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5); /* Borda branca semi-transparente */
+     .footer .d-flex { /* Centralizar botões sociais */
+          justify-content: center;
+     }
+     .footer p i { /* Centralizar ícones de contacto */
+          margin-right: 5px;
+     }
 }
 
