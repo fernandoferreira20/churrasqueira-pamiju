@@ -450,8 +450,16 @@ h1, h2, h3, h4, h5, h6 {
 .footer .section-title::after {
     display: none;
 }
-.footer h4.text-primary {
+.footer h4.text-primary { /* Garante que qualquer h4 com text-primary fique laranja */
      color: var(--primary) !important;
+}
+/* Corrigir nome da classe para título do footer se necessário */
+.footer h4.ff-secondary { /* Aplica estilo aos títulos específicos do template */
+     font-size: 1.1rem;
+     color: var(--primary);
+     margin-bottom: 1.5rem;
+     padding-bottom: 0;
+     text-transform: uppercase;
 }
 
 
@@ -503,6 +511,8 @@ h1, h2, h3, h4, h5, h6 {
 .footer p i { /* Ícones de contacto (mapa, telefone, email) */
     color: var(--primary); /* Laranja */
     margin-right: 10px; /* Espaço à direita */
+    width: 20px; /* Alinha os ícones */
+    text-align: center;
 }
 
 .footer .copyright { /* Linha de Copyright */
@@ -545,10 +555,20 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 99;
     background: var(--primary); /* Fundo Laranja */
     border-color: var(--primary);
+    width: 48px; /* Tamanho consistente com btn-lg-square */
+    height: 48px;
+    border-radius: 50%; /* Redondo */
 }
+.back-to-top i {
+     color: var(--dark); /* Ícone marrom escuro */
+}
+
 .back-to-top:hover {
      background: var(--secondary); /* Hover Vermelho */
      border-color: var(--secondary);
+}
+.back-to-top:hover i {
+     color: var(--text-light); /* Ícone branco no hover */
 }
 
 
@@ -580,6 +600,9 @@ h1, h2, h3, h4, h5, h6 {
     }
      .footer .d-flex { /* Centralizar botões sociais */
           justify-content: center;
+     }
+     .footer p { /* Garantir centralização dos parágrafos no mobile */
+         text-align: center !important;
      }
      .footer p i { /* Centralizar ícones de contacto */
           margin-right: 5px;
