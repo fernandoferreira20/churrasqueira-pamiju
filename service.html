@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <title>Serviços - Churrasqueira PAMIJU</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Serviços Churrasqueira PAMIJU, Chimoio, Eventos, Takeaway" name="keywords">
-    <meta content="Conheça os nossos serviços: churrasco no local, reservas para eventos e encomendas." name="description">
+    <meta content="Serviços Churrasqueira PAMIJU, Chimoio, Eventos, Takeaway, Catering" name="keywords"> <!-- MODIFICADO: Adicionado "Catering" -->
+    <meta content="Conheça os nossos serviços: churrasco no local, reservas para eventos, encomendas e catering." name="description"> <!-- MODIFICADO: Adicionado "Catering" -->
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -45,14 +45,11 @@
 
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
+            <!-- COLOQUE A SUA NAVBAR ATUALIZADA AQUI (com o logo Y1 e o botão corrigido) -->
             <nav class="navbar navbar-expand-lg navbar-dark px-4 px-lg-5 py-3 py-lg-0">
                 <a href="index.html" class="navbar-brand p-0">
-                    <h1 class="m-0">
-                        <img src="img/logo.png" alt="Logo" style="height: 32px; width: auto; margin-right: 10px; margin-bottom: 5px;">
-                        Churrasqueira PAMIJU
-                    </h1>
+                    <h1 class="m-0"><i class="fa fa-utensils me-3"></i>Churrasqueira PAMIJU</h1>
                 </a>
-                <!-- BOTÃO REVERTIDO PARA O NORMAL -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="fa fa-bars"></span>
                 </button>
@@ -60,7 +57,7 @@
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="index.html" class="nav-item nav-link">Início</a>
                         <a href="about.html" class="nav-item nav-link">Sobre</a>
-                        <a href="service.html" class="nav-item nav-link active">Serviços</a> <!-- Link Ativo -->
+                        <a href="service.html" class="nav-item nav-link active">Serviços</a>
                         <a href="menu.html" class="nav-item nav-link">Cardápio</a>
                         <a href="booking.html" class="nav-item nav-link">Reservas</a>
                         <a href="contact.html" class="nav-item nav-link">Localização</a>
@@ -92,8 +89,9 @@
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Nossos Serviços</h5>
                     <h1 class="mb-5">O que oferecemos</h1>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                <!-- MODIFICADO: Removido 'justify-content-center' para alinhar os 4 itens corretamente -->
+                <div class="row g-4">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s"> <!-- MODIFICADO: de col-lg-4 para col-lg-3 -->
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-utensils text-primary mb-4"></i>
@@ -102,7 +100,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s"> <!-- MODIFICADO: de col-lg-4 para col-lg-3 -->
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-calendar-alt text-primary mb-4"></i>
@@ -111,7 +109,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                     <!-- ************************************ -->
+                    <!-- *** BLOCO DE CATERING ADICIONADO *** -->
+                    <!-- ************************************ -->
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s"> <!-- ADICIONADO NOVO BLOCO -->
+                        <div class="service-item rounded pt-3">
+                            <div class="p-4">
+                                <i class="fa fa-3x fa-shipping-fast text-primary mb-4"></i> <!-- Ícone de 'transporte' -->
+                                <h5>Serviço de Catering</h5>
+                                <p>Levamos o sabor da PAMIJU até à sua festa, evento ou empresa. Fale connosco!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ************************************ -->
+                    <!-- *** FIM DO NOVO BLOCO      *** -->
+                    <!-- ************************************ -->
+                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s"> <!-- MODIFICADO: de col-lg-4 para col-lg-3 -->
                         <div class="service-item rounded pt-3">
                             <div class="p-4">
                                 <i class="fa fa-3x fa-shopping-basket text-primary mb-4"></i>
