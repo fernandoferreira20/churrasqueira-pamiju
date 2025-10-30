@@ -1,13 +1,13 @@
 /********** Template CSS - Adaptado para Churrasqueira PAMIJU **********/
 :root {
-    --primary: #FEA116;      /* Laranja/Amarelo Dourado (logo) */
-    --secondary: #D32A1E;    /* Vermelho Forte (logo) */
-    --light: #FFF8E1;        /* Bege muito claro (fundo principal) */
-    /* --dark: #4A2F20; */   /* Marrom Escuro (madeira/contornos/footer) */
+    --primary: #FEA116;       /* Laranja/Amarelo Dourado (logo) */
+    --secondary: #D32A1E;     /* Vermelho Forte (logo) */
+    --light: #FFF8E1;         /* Bege muito claro (fundo principal) */
     
     /* ************************************************** */
     /* *** MODIFICAÇÃO DE COR PARA TESTE (LARANJA) *** */
-    --dark: #F4792E; /* Novo Laranja "Carnaval" */
+    /* --dark: #4A2F20; */     /* Marrom Escuro (original) */
+    --dark: #F4792E; /* Novo Laranja "Carnaval" (RESTAURADO) */
     /* ************************************************** */
 
     --green-accent: #7EC242; /* Verde Lima (logo) */
@@ -27,7 +27,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Heebo', sans-serif;
     font-weight: 700;
-    color: var(--dark); /* Títulos em marrom escuro (agora Laranja) */
+    color: var(--dark); /* Títulos (agora Laranja) */
 }
 
 .hero-header h1.display-3 {
@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 .btn-primary {
     background-color: var(--primary); /* Botão principal Laranja */
     border-color: var(--primary);
-    color: var(--dark); /* Texto escuro no botão laranja */
+    color: var(--dark); /* Texto (agora Laranja) no botão laranja */
 }
 
 .btn-primary:hover {
@@ -94,15 +94,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Cor e Estilo da Navbar */
 .navbar.navbar-dark {
     /* Usar cor sólida escura em vez de textura para melhor consistência visual */
-    background: var(--dark); /* Fundo marrom escuro (agora Laranja) */
+    background: var(--dark); /* Fundo (agora Laranja) */
     border-bottom: 3px solid var(--primary); /* Linha Laranja */
 }
 
 .navbar .navbar-brand h1 {
-    /* ************************************************** */
-    /* *** MODIFICAÇÃO DE COR DO LOGO (BRANCO) *** */
-    color: var(--text-light); /* Nome PAMIJU em Branco (Modificado de --primary) */
-    /* ************************************************** */
+    color: var(--text-light); /* MODIFICADO PARA BRANCO (para teste de logo) */
     font-family: 'Heebo', sans-serif; /* Mantém a fonte original para o logo */
     font-weight: bold;
     font-size: 1.8rem; /* Ajustar tamanho se necessário */
@@ -128,39 +125,50 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary); /* Cor Laranja no hover/ativo */
 }
 
-/* --- ÍCONE NAVBAR TOGGLER (TRÊS TRAÇOS) --- */
 /* ***********************************************************
-    *** MODIFICAÇÃO 4: ESTILO ANTIGO DO TOGGLER REMOVIDO      ***
+    *** MODIFICAÇÃO CSS: BOTÃO COM MAIS CONTRASTE (PRETO) ***
     ***********************************************************
-    O código .navbar-toggler, .navbar-toggler:focus, e 
-    .navbar-toggler-icon (linhas 145-164 originais) foi removido.
 */
-
+.navbar-toggler {
+    border: 2px solid var(--primary) !important; /* Borda Laranja Sólida para contraste */
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo PRETO transparente (NOVO) */
+    padding: .25rem .5rem; 
+}
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 161, 22, 0.5); /* Sombra de foco Laranja */
+}
+.navbar-toggler-icon {
+     /* Ícone das três barras em Laranja (cor --primary) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(254, 161, 22, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    width: 1.2em; /* Tamanho do ícone */
+    height: 1.2em;
+}
+/* --- FIM ÍCONE --- */
 
 /* --- MENU MOBILE (QUANDO ABERTO) --- */
 @media (max-width: 991.98px) {
     .navbar-collapse {
-         /* Fundo sólido marrom escuro para garantir visibilidade */
-         background-color: var(--dark) !important; /* (agora Laranja) */
-         border-radius: 0 0 5px 5px;
-         margin-top: 3px; /* Espaço abaixo da linha laranja da navbar */
-         padding: 10px 0; /* Padding vertical */
-         box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para destacar */
-         border: 1px solid rgba(254, 161, 22, 0.2); /* Borda laranja sutil */
-         border-top: none; /* Sem borda no topo */
+        /* Fundo sólido (agora Laranja) para garantir visibilidade */
+        background-color: var(--dark) !important;
+        border-radius: 0 0 5px 5px;
+        margin-top: 3px; /* Espaço abaixo da linha laranja da navbar */
+        padding: 10px 0; /* Padding vertical */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra para destacar */
+        border: 1px solid rgba(254, 161, 22, 0.2); /* Borda laranja sutil */
+        border-top: none; /* Sem borda no topo */
     }
     /* Estilo dos links dentro do menu mobile aberto */
     .navbar-collapse .navbar-nav .nav-link {
-         color: var(--text-light) !important; /* Texto branco */
-         padding: 10px 20px; /* Padding interno */
-         margin: 2px 10px; /* Margem entre links */
-         border-radius: 3px;
-         text-align: left; /* Alinhar à esquerda */
+        color: var(--text-light) !important; /* Texto branco */
+        padding: 10px 20px; /* Padding interno */
+        margin: 2px 10px; /* Margem entre links */
+        border-radius: 3px;
+        text-align: left; /* Alinhar à esquerda */
     }
     .navbar-collapse .navbar-nav .nav-link:hover,
     .navbar-collapse .navbar-nav .nav-link.active {
-         background-color: var(--primary); /* Fundo laranja no hover/ativo */
-         color: var(--dark) !important; /* Texto (agora Laranja) */
+        background-color: var(--primary); /* Fundo laranja no hover/ativo */
+        color: var(--dark) !important; /* Texto (agora Laranja) */
     }
      .navbar .navbar-nav {
          border-top: none; /* Remover linha que poderia aparecer */
@@ -184,26 +192,26 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 992px) {
     .navbar.navbar-dark { /* Estilo inicial em telas grandes */
-         position: absolute;
-         width: 100%;
-         top: 0;
-         left: 0;
-         z-index: 999;
-         background: transparent !important; /* Começa transparente */
-         border-bottom: none;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background: transparent !important; /* Começa transparente */
+        border-bottom: none;
     }
 
     .navbar.navbar-dark.sticky-top { /* Estilo em telas grandes após scroll */
-         position: fixed;
-         background: var(--dark) !important; /* Fica (agora Laranja) */
-          border-bottom: 3px solid var(--primary); /* Adiciona linha laranja */
+        position: fixed;
+        background: var(--dark) !important; /* Fica (agora Laranja) */
+         border-bottom: 3px solid var(--primary); /* Adiciona linha laranja */
     }
      /* Esconder .navbar-collapse em telas grandes para evitar fundo extra indesejado */
-     .navbar-collapse.collapse.show:not(.collapsing) {
-         background-color: transparent !important;
-         box-shadow: none;
-         border: none;
-     }
+    .navbar-collapse.collapse.show:not(.collapsing) {
+        background-color: transparent !important;
+        box-shadow: none;
+        border: none;
+    }
 }
 
 /*** Hero Header ***/
@@ -212,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     /* *** MODIFICAÇÃO DE COR (LARANJA) *** */
     background: linear-gradient(rgba(244, 121, 46, .85), rgba(244, 121, 46, .85)), /* Overlay Laranja (Modificado de castanho) */
     /* ************************************************** */
-           url('../img/hero-bg.jpg') center center/cover no-repeat; /* *** TROCAR IMAGEM DE FUNDO *** */
+                url('../img/hero-bg.jpg') center center/cover no-repeat; /* *** TROCAR IMAGEM DE FUNDO *** */
     padding: 10rem 0;
 }
 .hero-header p.text-white {
@@ -598,39 +606,40 @@ h1, h2, h3, h4, h5, h6 {
 /* --- Ajustes Responsivos Adicionais --- */
 @media (max-width: 768px) {
     .hero-header {
-         padding: 6rem 0; /* Menos padding no mobile */
+        padding: 6rem 0; /* Menos padding no mobile */
     }
     .hero-header h1 {
-         font-size: 2.2rem; /* Título menor no mobile */
+        font-size: 2.2rem; /* Título menor no mobile */
     }
     .navbar .navbar-brand h1 {
-         font-size: 1.6rem; /* Logo menor no mobile */
+        font-size: 1.6rem; /* Logo menor no mobile */
     }
     .footer {
-          padding-top: 2rem; /* Menos padding no topo */
+         padding-top: 2rem; /* Menos padding no topo */
     }
     .footer .row > div { /* Espaçamento entre colunas do footer */
-         margin-bottom: 2rem;
+        margin-bottom: 2rem;
     }
      .footer .col-lg-4, .footer .col-md-6 { /* Centralizar colunas do footer no mobile */
-         text-align: center !important;
-     }
-      .footer .btn.btn-link {
-         text-align: center;
-     }
-      .footer .btn.btn-link::before {
-         display: none; /* Esconde a seta nos links do footer */
-     }
-      .footer .d-flex { /* Centralizar botões sociais */
-          justify-content: center;
-     }
-      .footer p { /* Garantir centralização dos parágrafos no mobile */
           text-align: center !important;
      }
-      .footer p i { /* Centralizar ícones de contacto */
+      .footer .btn.btn-link {
+        text-align: center;
+    }
+     .footer .btn.btn-link::before {
+        display: none; /* Esconde a seta nos links do footer */
+    }
+     .footer .d-flex { /* Centralizar botões sociais */
+          justify-content: center;
+     }
+     .footer p { /* Garantir centralização dos parágrafos no mobile */
+         text-align: center !important;
+     }
+     .footer p i { /* Centralizar ícones de contacto */
           margin-right: 5px;
      }
 }
+
 
 /*** Animação de Rotação para Imagem Hero ***/
 .hero-image-rotate {
@@ -639,79 +648,10 @@ h1, h2, h3, h4, h5, h6 {
 
 @keyframes rotate {
     from {
-         transform: rotate(0deg); /* Começa sem rotação */
+        transform: rotate(0deg); /* Começa sem rotação */
     }
     to {
-         transform: rotate(360deg); /* Termina com uma volta completa */
+        transform: rotate(360deg); /* Termina com uma volta completa */
     }
-}
-
-
-/* ***********************************************************
-    *** MODIFICAÇÃO 4: NOVO ESTILO DO TOGGLER ADICIONADO      ***
-    ***********************************************************
-    Adicionado o novo estilo do Uiverse.io e adaptado às 
-    cores do tema (--primary e --secondary).
-*/
-/* <reset-style> ============================ */
-.navbar-toggler { /* Aplicado o reset ao .navbar-toggler */
-  border: none;
-  background: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  font-family: inherit;
-}
-/* ============================ */
-
-/* <style for menu__icon> ======== */
-.menu__icon {
-  width: 28px;
-  height: 28px;
-  padding: 3px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  /* Adicionado para garantir que o botão não tenha o estilo padrão do bootstrap */
-  border: none !important; 
-  box-shadow: none !important;
-}
-
-.menu__icon span {
-  width: 100%;
-  height: 0.125rem;
-  border-radius: 0.125rem;
-  background-color: var(--primary); /* MODIFICADO: De azul para Laranja */
-  box-shadow: 0 .5px 2px 0 hsla(0, 0%, 0%, .2);
-  transition: transform .4s, background-color .4s, width .4s, opacity .4s;
-}
-
-.menu__icon span:nth-child(2) {
-  width: 60%;
-}
-
-.menu__icon:hover span:nth-child(1) {
-  background-color: var(--secondary); /* MODIFICADO: De vermelho vivo para Vermelho */
-  transform: translateY(7.5px) rotate(-45deg);
-}
-
-/* ***********************************************************
-  *** CORREÇÃO DO ERRO DE DIGITAÇÃO ESTÁ AQUI ABAIXO      ***
-  ***********************************************************
-*/
-.menu__icon:hover span:nth-child(2) { /* CORRIGIDO: de nth-C hild(2) */
-  width: 0;
-  opacity: 0;
-}
-
-.menu__icon:hover span:nth-child(3) {
-  background-color: var(--secondary); /* MODIFICADO: De vermelho vivo para Vermelho */
-  transform: translateY(-7.5px) rotate(45deg);
-}
-
-/* Adicionado para remover o foco laranja do bootstrap */
-.navbar-toggler:focus {
-    box-shadow: none;
 }
 
