@@ -30,6 +30,32 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <!-- Estilo personalizado para a mensagem do formulário (ADICIONADO) -->
+    <style>
+        :root {
+            --green-accent: #C3E6CB;
+            --dark-text: #155724;
+            --red-accent: #F8D7DA;
+            --light-text: #721C24;
+        }
+        #form-message {
+            display: none; 
+            padding: 10px; 
+            border-radius: 5px; 
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 500;
+        }
+        #form-message.success {
+            background-color: var(--green-accent);
+            color: var(--dark-text);
+        }
+        #form-message.error {
+            background-color: var(--red-accent);
+            color: var(--light-text);
+        }
+    </style>
 </head>
 
 <body>
@@ -92,34 +118,43 @@
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservas</h5>
                         <h1 class="text-white mb-4">Reserve a sua Mesa Online</h1>
-                        <form>
+                        
+                        <!-- 
+                            MODIFICAÇÕES PARA O FIREBASE:
+                            1. Adicionado id="bookingForm" ao <form>
+                            2. Adicionado 'required' aos campos
+                            3. Adicionado id="submitButton" ao botão
+                            4. Adicionado o div #form-message
+                        -->
+                        
+                        <form id="bookingForm"> <!-- MODIFICAÇÃO 1 -->
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" id="name" placeholder="Seu Nome">
+                                        <input type="text" class="form-control" id="name" placeholder="Seu Nome" required> <!-- MODIFICAÇÃO 2 -->
                                         <label for="name">Seu Nome</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <input type="email" class="form-control" id="email" placeholder="Seu Email">
+                                        <input type="email" class="form-control" id="email" placeholder="Seu Email" required> <!-- MODIFICAÇÃO 2 -->
                                         <label for="email">Seu Email</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="date3" data-target-input="nearest">
-                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Data e Hora" data-target="#date3" data-toggle="datetimepicker" />
+                                        <input type="text" class="form-control datetimepicker-input" id="datetime" placeholder="Data e Hora" data-target="#date3" data-toggle="datetimepicker" required /> <!-- MODIFICAÇÃO 2 -->
                                         <label for="datetime">Data e Hora</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select" id="select1">
+                                        <select class="form-select" id="select1" required> <!-- MODIFICAÇÃO 2 -->
                                           <option value="1">1 Pessoa</option>
                                           <option value="2">2 Pessoas</option>
                                           <option value="3">3 Pessoas</option>
                                           <option value="4">4 Pessoas</option>
-                                          <option value="5">5+ Pessoas</option>
+                                          <option value="5">5+ Pessoas</option> <!-- O script vai guardar "5" -->
                                         </select>
                                         <label for="select1">Nº de Pessoas</label>
                                       </div>
@@ -127,12 +162,18 @@
                                 <div class="col-12">
                                     <div class="form-floating">
                                         <textarea class="form-control" placeholder="Pedido Especial" id="message" style="height: 100px"></textarea>
-                                        <label for="message">Pedido Especial</label>
+                                        <label for="message">Pedido Especial (opcional)</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Reservar Agora</button>
+                                    <button class="btn btn-primary w-100 py-3" type="submit" id="submitButton">Reservar Agora</button> <!-- MODIFICAÇÃO 3 -->
                                 </div>
+
+                                <!-- Mensagem de Sucesso/Erro para o Firebase (ADICIONADO) -->
+                                <div class="col-12">
+                                    <div id="form-message"></div> <!-- MODIFICAÇÃO 4 -->
+                                </div>
+
                             </div>
                         </form>
                     </div>
@@ -198,7 +239,98 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> <!-- O SEU SCRIPT ORIGINAL (MANTIDO) -->
+
+
+    <!-- ****************************************************** -->
+    <!-- ***** SCRIPT FIREBASE PARA RESERVAS (ADICIONADO) ***** -->
+    <!-- ****************************************************** -->
+    <script type="module">
+        // Importar as funções necessárias da Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+        // 1. COLA A TUA FIREBASE CONFIG AQUI
+        // (Vem do Passo 10 do "Dever de Casa" no site da Firebase)
+       // Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCTGjhQXbEKSect3oBibPyvCUZEFUdLSPQ",
+        authDomain: "pamijureservas.firebaseapp.com",
+        projectId: "pamijureservas",
+        storageBucket: "pamijureservas.firebasestorage.app",
+        messagingSenderId: "499850653729",
+        appId: "1:499850653729:web:a806f68d13fe4764c07360"
+        };
+
+
+        // Inicializar a Firebase
+        const app = initializeApp(firebaseConfig);
+        // Ligar à base de dados Firestore
+        const db = getFirestore(app);
+
+        // Selecionar o formulário e os elementos de mensagem
+        const bookingForm = document.getElementById('bookingForm');
+        const submitButton = document.getElementById('submitButton');
+        const formMessage = document.getElementById('form-message');
+
+        // Adicionar um "ouvinte" ao formulário
+        bookingForm.addEventListener('submit', async (e) => {
+            // 1. Impedir o envio padrão do HTML
+            e.preventDefault();
+
+            // 2. Mudar o texto do botão e mostrar que está a carregar
+            submitButton.disabled = true;
+            submitButton.innerText = 'A enviar reserva...';
+            formMessage.style.display = 'none';
+            formMessage.classList.remove('success', 'error');
+
+            try {
+                // 3. Recolher os dados do formulário
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const datetime = document.getElementById('datetime').value;
+                const people = document.getElementById('select1').value; // Usar "select1"
+                const message = document.getElementById('message').value;
+
+                // 4. Enviar os dados para a Firebase
+                const docRef = await addDoc(collection(db, "reservas"), {
+                    nome: name,
+                    email: email,
+                    dataHora: datetime,
+                    pessoas: people,
+                    mensagem: message,
+                    estado: "Pendente",
+                    criadoEm: serverTimestamp()
+                });
+
+                // 5. Mostrar mensagem de sucesso
+                formMessage.innerText = 'Reserva enviada com sucesso! Entraremos em contacto.';
+                formMessage.classList.add('success');
+                formMessage.style.display = 'block';
+
+                // 6. Limpar o formulário e reativar o botão
+                bookingForm.reset();
+                submitButton.disabled = false;
+                submitButton.innerText = 'Reservar Agora';
+
+            } catch (error) {
+                // 7. Mostrar mensagem de erro se falhar
+                console.error("Erro ao adicionar reserva: ", error);
+                formMessage.innerText = 'Erro ao enviar a reserva. Por favor, tente novamente ou ligue para nós.';
+                formMessage.classList.add('error');
+                formMessage.style.display = 'block';
+
+                // 8. Reativar o botão
+                submitButton.disabled = false;
+                submitButton.innerText = 'Reservar Agora';
+            }
+        });
+
+    </script>
+    <!-- ****************************************************** -->
+    <!-- ***** SCRIPT FIREBASE PARA RESERVAS (FIM) ******** -->
+    <!-- ****************************************************** -->
 </body>
 
 </html>
+
