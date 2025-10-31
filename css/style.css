@@ -7,7 +7,8 @@
     /* ************************************************** */
     /* *** MODIFICAÇÃO DE COR PARA TESTE (LARANJA) *** */
     /* --dark: #4A2F20; */     /* Marrom Escuro (original) */
-    --dark: #F4792E; /* Novo Laranja "Carnaval" (RESTAURADO) */
+    --dark: #4A2F20;     /* Marrom Escuro (original) */
+    /*--dark: #F4792E;*/ /* Novo Laranja "Carnaval" (RESTAURADO) */
     /* ************************************************** */
 
     --green-accent: #7EC242; /* Verde Lima (logo) */
